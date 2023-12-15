@@ -1,5 +1,3 @@
-
-
 library(tidyverse)
 library(rnoaa)
 library(dplyr)
@@ -33,3 +31,4 @@ all_omsk_around_data <- all_omsk_around_data %>%
 all_omsk_around_data <- all_omsk_around_data %>% group_by(id, year) %>% summarise(sum_year = mean(yj, na.rm = TRUE))
 all_omsk_around_data <- all_omsk_around_data %>% group_by(id) %>% summarise(sum_station = mean(sum_year, na.rm = TRUE))
 Y <- sum(all_omsk_around_data$sum_station)
+print(paste(Y, "тонн")) 
